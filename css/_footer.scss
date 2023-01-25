@@ -1,0 +1,143 @@
+@use "mixin";
+
+/* ===============================================
+# フッター
+=============================================== */
+
+.footer {
+  background: url(../img/bg3.jpg) no-repeat center center/cover;
+  height: 522px;
+  padding: 64px 20px 61px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;  // firefox対策
+
+  &-link {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-align: start;  // 縦書き書式の上端揃え
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;  // firefox対策
+
+    &-oheya {
+
+      a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        letter-spacing: 9.33px;
+      }
+    }
+
+    &-menu {
+      margin: 0 34px;
+
+      a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        letter-spacing: 9.33px;
+      }
+    }
+
+    &-onsen {
+
+      a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        letter-spacing: 7px;
+      }
+    }
+  }
+
+  &-logo {
+    margin-top: 96px;
+
+    a img {
+      width: 145px;
+      height: 92px;
+    }
+  }
+
+  &-address {
+    display: flex;
+    justify-content: center;
+    margin-top: 72px;
+
+    .post-num {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+
+      @include mixin.sp {
+        font-size: 14px;
+      }
+    }
+
+    .address-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      letter-spacing: 2.88px;
+      margin-left: 21px;
+
+      @include mixin.sp {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 23px;
+
+    .tel {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+
+      @include mixin.sp {
+        font-size: 14px;
+      }
+    }
+
+    .fax {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      margin-left: 20px;
+
+      @include mixin.sp {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* ===============================================
+# コピーライト
+=============================================== */
+.copyright {
+  background-color: #000000;
+  height: 60px;
+
+  p {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+  }
+}

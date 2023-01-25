@@ -1,0 +1,72 @@
+@use "mixin";
+
+// 共通
+body {
+  font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”, “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+// placeholderのスタイリング
+input::-webkit-input-placeholder {
+  color: #797878;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+input:-moz-placeholder {
+  color: #797878;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+input::-moz-placeholder {
+  color: #797878;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+input:-ms-input-placeholder {
+  color: #797878;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+
+button{
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#wrapper {
+  width: 100%;
+  overflow: hidden !important;  // overflow-xのみでは2本スクロールバーが出てしまう
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+// common.scssでのimgの指定は禁止
+// img {
+//   width: 100%;  //Swiper対策の為、max-widthの使用禁止
+//   height: auto;
+// }

@@ -1,0 +1,208 @@
+@use "mixin";
+
+/* ===============================================
+# モーダルエリア
+=============================================== */
+/* モーダルCSSここから */
+.modalArea {
+  visibility: hidden; /* displayではなくvisibility */
+  opacity : 0;
+  position: fixed;
+  z-index: 20; /* サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .4s;
+
+  // 画面全体が.modalBg
+  .modalBg {
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  // クリック後に表示されるモーダル
+  .modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 550px;
+    height: 600px;
+    padding: 29px 60px 90px;
+    background-color: #fff;
+    border: 1px solid #707070;
+
+    @include mixin.sp {
+      max-width: 550px;  // カンプの幅を超えないように指定
+      max-height: 600px;  // カンプの幅を超えないように指定
+      width: 90%;
+      height: auto;
+      // top: 70%;
+    }
+
+    .modalContents {
+
+      .modalTitle {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        text-align: center;
+        border-bottom: 1px solid #E7E7E7;
+        padding-bottom: 29px;
+      }
+
+      .name {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        padding-top: 35px;
+        padding-bottom: 14px;
+      }
+
+      .name-area {
+        width: 100%;
+        border: 1px solid #E7E7E7;
+      }
+
+      .e-mail {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        padding: 14px 0;
+      }
+
+      .e-mail-area {
+        width: 100%;
+        border: 1px solid #E7E7E7;
+      }
+
+      .select-plan {
+        display: flex;
+        align-items: baseline;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        padding: 14px 0;
+
+        @include mixin.sp {
+          display: block;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+
+          @include mixin.sp {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .plan-area {
+        width: 100%;
+        color: #797878;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 32px;
+        padding-left: 10px;
+        border: 1px solid #E7E7E7;
+      }
+
+      .plan__1 {
+        color: #000000;
+      }
+
+      .plan__2 {
+        color: #000000;
+      }
+
+      .plan__3 {
+        color: #000000;
+      }
+
+      .date-select {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        padding: 14px 0;
+      }
+
+      #js-datepicker {
+        width: 100%;
+        border: 1px solid #E7E7E7;
+      }
+
+      .send {
+        display: block;
+        width: 198px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        margin-top: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #707070;
+      }
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    // モーダルを閉じるボタン
+    .closeModal {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      cursor: pointer;
+    }
+  }
+}
+
+.is-show { /* モーダル表示用クラス */
+  visibility: visible;
+  opacity : 1;
+}
+/* モーダルCSSここまで */
+
+
+// FlatpickrのCSS
+@import 'flatpickr/dist/flatpickr.min.css';
+
+$red        : #f00;
+$blue       : #25bdcf;
+
+/* 日曜日：赤 */
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(7n + 1),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n + 1) {
+  color: $red;
+}
+
+/* 土曜日：青 */
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(7),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
+  color: $blue;
+}
+
+/* 祝日 */
+.flatpickr-day.is-holiday{
+  background: lighten($red, 40%) !important;
+}
+
+/* 入力欄の文字列を選択させないようにしておく  */
+.flatpickr-calendar .numInput{
+  user-select: none;
+}

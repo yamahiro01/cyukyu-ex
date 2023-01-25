@@ -1,0 +1,2384 @@
+@use "mixin";
+@use "header";
+@use "footer";
+
+/* ===============================================
+# メインビジュアル
+=============================================== */
+
+.mv {
+  // padding-top: 90px;
+  height: 1079px;
+  position: relative;
+
+  @include mixin.tab {
+    height: 800px;
+  }
+
+  &-box {
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+
+    &-bg__1, &-bg__2, &-bg__3 {
+      width: 100%;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      animation: anime 15s 0s infinite;
+      z-index: 0;
+      opacity: 0;
+    }
+
+    &-bg__1 {
+      background: url(../img/mainbg01.jpg) no-repeat center center/cover;
+      filter: brightness(0.7);
+    }
+
+    &-bg__2 {
+      background: url(../img/mainbg02.jpg) no-repeat center center/cover;
+      filter: brightness(0.7);
+      animation-delay: 5s;
+      -webkit-animation-delay: 5s;
+    }
+
+    &-bg__3 {
+      background: url(../img/mainbg03.jpg) no-repeat center center/cover;
+      filter: brightness(0.7);
+      animation-delay: 10s;
+      -webkit-animation-delay: 10s;
+    }
+
+    @keyframes anime {
+      0% {
+        opacity: 1;
+      }
+
+      33% {  // 5秒目の指定
+        opacity: 1;
+      }
+
+      40% {  // 6秒目の指定
+        opacity: 0;
+        transform: scale(1.2);
+        z-index: 10;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .main-ttl {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    color: #FFFFFF;
+    font-size: 34px;
+    position: absolute;
+    top: 33.51852%;
+    right: 26.45833%;
+    z-index: 15;
+
+    @include mixin.tab {
+      font-size: 28px;
+      top: 25%;
+    }
+
+    &__1 {
+      font-weight: 800;  // font-weightは個々に指定
+      letter-spacing: 10px;
+    }
+
+    &__2 {
+      font-weight: 800;  // font-weightは個々に指定
+      letter-spacing: 10px;
+      padding-right: 50px;
+    }
+  }
+}
+
+/* ===============================================
+# イントロダクション
+=============================================== */
+
+.introduction {
+  background: url(../img/bg.jpg) no-repeat center center/cover;
+  height: 681px;
+  text-align: center;  // firefox対策
+
+  @include mixin.sp {
+    height: fit-content;
+    padding: 60px 0;
+  }
+
+  .inner {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    // 縦書きの際に横書きのみの文字（今回だと半角英数）を正立に配置
+    text-orientation: upright;
+    display: inline-block;  // firefox対策
+    text-align: left;  // firefox対策
+
+    @include mixin.sp {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      // 縦書き解除
+      writing-mode: horizontal-tb;
+      -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: horizontal-tb;
+    }
+
+    .main-ttl__1 {
+      display: inline-block;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 11px;
+      margin-top: 64px;
+      margin-left: 33px;
+
+      @include mixin.sp {
+        display: block;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+    }
+
+    .main-ttl__2 {
+      display: inline-block;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 12px;
+      margin-top: 149px;
+
+      @include mixin.sp {
+        display: block;
+        margin-top: 25px;
+        letter-spacing: 2px;
+      }
+    }
+
+    .paragraph {
+      margin-top: 149px;
+
+      @include mixin.sp {
+        margin: 0;
+      }
+
+      .para-1 {
+        margin-left: 118px;
+        margin-right: 118px;
+
+        @include mixin.tab {
+          margin-left: 60px;
+          margin-right: 60px;
+        }
+
+        @include mixin.sp {
+          margin: 40px 0 0;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 4px;
+
+          @include mixin.sp {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+          }
+        }
+
+        p:nth-child(2) {
+          margin: 0 22px;
+
+          @include mixin.sp {
+            margin: 10px 0;
+          }
+        }
+      }
+
+      .para-2 {
+
+        @include mixin.sp {
+          margin-top: 40px;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 4px;
+
+          @include mixin.sp {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+          }
+        }
+
+        p:nth-child(2) {
+          margin: 0 22px;
+
+          @include mixin.sp {
+            margin: 10px 0;
+          }
+        }
+      }
+
+      .para-3 {
+        margin-left: 118px;
+        margin-right: 118px;
+
+        @include mixin.tab {
+          margin-left: 60px;
+          margin-right: 60px;
+        }
+
+        @include mixin.sp {
+          margin: 40px 0 0;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 4px;
+
+          @include mixin.sp {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+          }
+        }
+
+        p:nth-child(2) {
+          margin: 0 22px;
+
+          @include mixin.sp {
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: 500;
+      margin-top: 415px;
+      letter-spacing: 8px;
+
+      @include mixin.sp {
+        text-align: right;
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+/* ===============================================
+# コンテンツ
+=============================================== */
+
+.contents {
+  padding: 106px 0 78px;
+
+  // お部屋について
+  .oheya {
+    height: 545px;
+    display: flex;
+
+    @include mixin.tab {
+      height: fit-content;
+      display: block;
+    }
+
+    &-photo {
+      width: 54.69%;
+
+      @include mixin.tab {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 545px;
+        object-fit: cover;
+        vertical-align: bottom;
+
+        @include mixin.sp {
+          height: 350px;
+        }
+      }
+    }
+
+    &-sentence {
+      // width: 45.31%;  img基準で%指定しているので今回は指定なし
+      margin-top: 32px;
+      margin-left: 137px;
+
+      @include mixin.tab {
+        margin-top: 60px;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      @include mixin.sp {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -100px;
+      }
+
+      .headline {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1.722;
+        @include mixin.afterlineHeight(1.722);
+
+        @include mixin.s-pc {
+          font-size: 30px;
+        }
+
+        @include mixin.tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          color: #FFFFFF;
+          text-shadow:
+          1px 1px #000000,  /*文字の右下に影を追加*/
+          1px -1px #000000,  /*文字の右上に影を追加*/
+          -1px 1px #000000,  /*文字の左下に影を追加*/
+          -1px -1px #000000;  /*文字の左上に影を追加*/
+          font-size: 24px;
+        }
+      }
+
+      .text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2;
+        @include mixin.afterlineHeight(2);
+        margin-top: 75px;
+
+        @include mixin.tab {
+          margin-top: 40px;
+        }
+
+        @include mixin.sp {
+          margin-top: 75px;
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+
+        .s-pc-br {
+          display: none;
+
+          @include mixin.s-pc {
+            display: block;
+          }
+        }
+      }
+
+      .detail {
+        width: 200px;
+        height: 56px;
+        background-color: #FFFFFF;
+        text-align: center;
+        line-height: 56px;
+        margin-top: 75px;
+        border: 1px solid #707070;
+
+        @include mixin.tab {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 60px;
+        }
+
+        a {
+          display: inline-block;
+          width: 200px;
+          height: 56px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // 料理について
+  .menu {
+    height: 545px;
+    display: flex;
+    justify-content: flex-end;  // 左右逆の為、右寄せ（rightはsafariで効かない為）
+    margin-top: 122px;
+
+    @include mixin.tab {
+      height: fit-content;
+      flex-direction: column-reverse;
+    }
+
+    &-sentence {
+      // width: 45.31%;  img基準で%指定しているので今回は指定なし
+      margin-top: 53px;
+      margin-right: 174px;
+
+      @include mixin.tab {
+        margin-top: 60px;
+        margin-right: 0;
+        text-align: center;
+      }
+
+      @include mixin.sp {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -100px;
+      }
+
+      .headline {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1.722;
+        @include mixin.afterlineHeight(1.722);
+
+        @include mixin.s-pc {
+          font-size: 30px;
+        }
+
+        @include mixin.tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          color: #FFFFFF;
+          text-shadow:
+          1px 1px #000000,  /*文字の右下に影を追加*/
+          1px -1px #000000,  /*文字の右上に影を追加*/
+          -1px 1px #000000,  /*文字の左下に影を追加*/
+          -1px -1px #000000;  /*文字の左上に影を追加*/
+          font-size: 24px;
+        }
+      }
+
+      .text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2;
+        @include mixin.afterlineHeight(2);
+        margin-top: 75px;
+
+        @include mixin.tab {
+          margin-top: 40px;
+        }
+
+        @include mixin.sp {
+          margin-top: 75px;
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+      }
+
+      .detail {
+        width: 200px;
+        height: 56px;
+        background-color: #FFFFFF;
+        text-align: center;
+        line-height: 56px;
+        margin-top: 43px;
+        border: 1px solid #707070;
+
+        @include mixin.tab {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 60px;
+        }
+
+        a {
+          display: inline-block;
+          width: 200px;
+          height: 56px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-photo {
+      width: 54.69%;
+      // transform: none !important;
+
+      @include mixin.tab {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 545px;
+        object-fit: cover;
+        vertical-align: bottom;
+
+        @include mixin.sp {
+          height: 350px;
+        }
+      }
+    }
+  }
+
+  // 温泉について
+  .onsen {
+    height: 545px;
+    display: flex;
+    margin-top: 122px;
+
+    @include mixin.tab {
+      height: fit-content;
+      display: block;
+    }
+
+    &-photo {
+      width: 54.69%;
+
+      @include mixin.tab {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 545px;
+        object-fit: cover;
+        vertical-align: bottom;
+
+        @include mixin.sp {
+          height: 350px;
+        }
+      }
+    }
+
+    &-sentence {
+      // width: 45.31%;  img基準で%指定しているので今回は指定なし
+      margin-top: 32px;
+      margin-left: 137px;
+
+      @include mixin.tab {
+        margin-top: 60px;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      @include mixin.sp {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -100px;
+      }
+
+      .headline {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1.722;
+        @include mixin.afterlineHeight(1.722);
+
+        @include mixin.s-pc {
+          font-size: 30px;
+        }
+
+        @include mixin.tab {
+          font-size: 28px;
+        }
+
+        @include mixin.sp {
+          color: #FFFFFF;
+          text-shadow:
+          1px 1px #000000,  /*文字の右下に影を追加*/
+          1px -1px #000000,  /*文字の右上に影を追加*/
+          -1px 1px #000000,  /*文字の左下に影を追加*/
+          -1px -1px #000000;  /*文字の左上に影を追加*/
+          font-size: 24px;
+        }
+      }
+
+      .text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2;
+        @include mixin.afterlineHeight(2);
+        margin-top: 75px;
+
+        @include mixin.tab {
+          margin-top: 40px;
+        }
+
+        @include mixin.sp {
+          margin-top: 75px;
+        }
+
+        .pc-br {
+
+          @include mixin.sp {
+            display: none;
+          }
+        }
+
+        // .s-pc-br {
+        //   display: none;
+
+        //   @include mixin.s-pc {
+        //     display: block;
+        //   }
+        // }
+      }
+
+      .detail {
+        width: 200px;
+        height: 56px;
+        background-color: #FFFFFF;
+        text-align: center;
+        line-height: 56px;
+        margin-top: 75px;
+        border: 1px solid #707070;
+
+        @include mixin.tab {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 60px;
+        }
+
+        a {
+          display: inline-block;
+          width: 200px;
+          height: 56px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# 宿泊プラン
+=============================================== */
+
+.plan {
+  background: url(../img/bg02.jpg) no-repeat center center/cover;
+  height: 775px;
+  padding: 60px 0 144px;
+
+  @include mixin.tab {
+    height: fit-content;
+  }
+
+  .inner {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .sakura {
+      text-align: center;
+    }
+
+    .headline {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      text-align: center;
+      margin-top: 20px;
+
+      @include mixin.sp {
+        font-size: 28px;
+      }
+    }
+
+    .plan-flex {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 66px;
+
+      @include mixin.tab {
+        display: block;
+      }
+
+      // プラン1
+      .plan__1 {
+
+        &-photo {
+
+          @include mixin.tab {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &-photo img {
+          width: 331px;
+          height: 209px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.tab {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &-headline {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.6;
+          @include mixin.afterlineHeight(1.6);
+          margin-top: 32px;
+
+          @include mixin.tab {
+            font-size: 28px;
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            font-size: 24px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .sp-br {
+            display: none;
+
+            @include mixin.sp {
+              display: block;
+            }
+          }
+        }
+
+        &-text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 2;
+          @include mixin.afterlineHeight(2);
+          margin-top: 36px;
+
+          @include mixin.tab {
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .pc-br {
+
+            @include mixin.sp {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // プラン2
+      .plan__2 {
+
+        @include mixin.tab {
+          margin-top: 80px;
+        }
+
+        &-photo {
+
+          @include mixin.tab {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &-photo img {
+          width: 331px;
+          height: 209px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.tab {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &-headline {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.6;
+          @include mixin.afterlineHeight(1.6);
+          margin-top: 32px;
+
+          @include mixin.tab {
+            font-size: 28px;
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            font-size: 24px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .sp-br {
+            display: none;
+
+            @include mixin.sp {
+              display: block;
+            }
+          }
+        }
+
+        &-text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 2;
+          @include mixin.afterlineHeight(2);
+          margin-top: 36px;
+
+          @include mixin.tab {
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .pc-br {
+
+            @include mixin.sp {
+              display: none;
+            }
+          }
+        }
+      }
+
+      // プラン3
+      .plan__3 {
+
+        @include mixin.tab {
+          margin-top: 80px;
+        }
+
+        &-photo {
+
+          @include mixin.tab {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &-photo img {
+          width: 331px;
+          height: 209px;
+          object-fit: cover;
+          vertical-align: bottom;
+
+          @include mixin.tab {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &-headline {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.6;
+          @include mixin.afterlineHeight(1.6);
+          margin-top: 32px;
+
+          @include mixin.tab {
+            font-size: 28px;
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            font-size: 24px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .sp-br {
+            display: none;
+
+            @include mixin.sp {
+              display: block;
+            }
+          }
+        }
+
+        &-text {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 2;
+          @include mixin.afterlineHeight(2);
+          margin-top: 36px;
+
+          @include mixin.tab {
+            text-align: center;
+          }
+
+          @include mixin.sp {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .pc-br {
+
+            @include mixin.sp {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===============================================
+# お知らせ
+=============================================== */
+
+.news {
+  height: 757px;
+  padding: 60px 0;
+
+  @include mixin.tab {
+    height: fit-content;
+  }
+
+  .inner {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .sakura {
+      text-align: center;
+    }
+
+    .headline {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1;
+      @include mixin.afterlineHeight(1);
+      text-align: center;
+      margin-top: 20px;
+
+      @include mixin.sp {
+        font-size: 28px;
+      }
+    }
+
+    .tab-menu {
+      display: flex;
+      justify-content: center;
+      margin-top: 46px;
+
+      .tab-trigger {
+        cursor: pointer;
+      }
+
+      // タブメニュー（クリック後）
+      .tab-trigger.is-active {
+        text-decoration: underline;
+      }
+
+      .sales-information {
+        margin-right: 53px;
+
+        span {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+
+          &:hover {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .others {
+        margin-right: 30px;
+
+        span {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1;
+          @include mixin.afterlineHeight(1);
+
+          &:hover {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    // 営業情報（タブ）
+    .tab-content__item {
+      display: none;
+
+      // 営業情報
+      .news-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 49px;
+
+        @include mixin.tab {
+          flex-direction: column-reverse;
+        }
+
+        // お知らせ（左）
+        .news-left {
+
+          @include mixin.tab {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            margin: 0;
+          }
+
+          // お知らせ1
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.tab {
+              margin-top: 20px;
+            }
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__1 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              // @include mixin.sp {
+              //   width: 90%;
+              //   margin-left: auto;
+              //   margin-right: auto;
+              // }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // お知らせ2
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__2 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 2;
+                @include mixin.afterlineHeight(2);
+                margin-top: 10px;
+
+                @include mixin.sp {
+                  line-height: 1.5;
+                  @include mixin.afterlineHeight(1.5);
+                }
+
+                .pc-br {
+
+                  @include mixin.sp {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+
+          // お知らせ3
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__3 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 2;
+                @include mixin.afterlineHeight(2);
+                margin-top: 10px;
+
+                @include mixin.sp {
+                  line-height: 1.5;
+                  @include mixin.afterlineHeight(1.5);
+                }
+
+                .pc-br {
+
+                  @include mixin.sp {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // お知らせ（右）
+        .news-right {
+
+          @include mixin.tab {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            margin: 0;
+          }
+
+          // お知らせ4
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__4 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // お知らせ5
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__5 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // お知らせ6
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .news__6 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // その他（タブ）
+    .tab-content__item {
+      display: none;
+
+      // その他
+      .others-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 49px;
+
+        @include mixin.tab {
+          flex-direction: column-reverse;
+        }
+
+        // お知らせ（左）
+        .others-left {
+
+          @include mixin.tab {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            margin: 0;
+          }
+
+          // その他1
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.tab {
+              margin-top: 20px;
+            }
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__1 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+
+            // @include mixin.tab {
+            //   margin-top: 20px;
+            // }
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // その他2
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__2 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 2;
+                @include mixin.afterlineHeight(2);
+                margin-top: 10px;
+
+                @include mixin.sp {
+                  line-height: 1.5;
+                  @include mixin.afterlineHeight(1.5);
+                }
+
+                .pc-br {
+
+                  @include mixin.sp {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+
+          // その他3
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__3 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 2;
+                @include mixin.afterlineHeight(2);
+                margin-top: 10px;
+
+                @include mixin.sp {
+                  line-height: 1.5;
+                  @include mixin.afterlineHeight(1.5);
+                }
+
+                .pc-br {
+
+                  @include mixin.sp {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // その他（右）
+        .others-right {
+
+          @include mixin.tab {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          @include mixin.sp {
+            margin: 0;
+          }
+
+          // その他4
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__4 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // その他5
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__5 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+
+          // その他6
+          a {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          .others__6 {
+            display: flex;
+            width: 570px;
+            height: 130px;
+            background-color: #F6F6F6;
+            padding: 15px 0 15px 10px;
+            // margin-top: 20px;
+
+            @include mixin.sp {
+              display: block;
+              width: 90%;
+              margin-left: auto;
+              margin-right: auto;
+              background-color: transparent;
+              padding: 0;
+              position: relative;
+            }
+
+            &-photo {
+              margin-right: 30px;
+
+              @include mixin.sp {
+                margin: 0;
+              }
+
+              img {
+                width: 103px;
+                height: 100px;
+                object-fit: cover;
+
+                @include mixin.sp {
+                  width: 100%;
+                  height: 120px;
+                }
+              }
+            }
+
+            &-sentense {
+
+              @include mixin.sp {
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                color: #FFFFFF;
+                text-shadow:
+                1px 1px #000000,  /*文字の右下に影を追加*/
+                1px -1px #000000,  /*文字の右上に影を追加*/
+                -1px 1px #000000,  /*文字の左下に影を追加*/
+                -1px -1px #000000;  /*文字の左上に影を追加*/
+              }
+
+              .date {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+              }
+
+              .text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                @include mixin.afterlineHeight(1);
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // タブメニュー（クリック後）に該当するタブコンテンツ
+    .tab-content__item.is-active {
+      display: block;
+      animation: fade 0.5s ease;
+    }
+
+    @keyframes fade {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+/* ===============================================
+# アクセス
+=============================================== */
+
+.access {
+  background: url(../img/bg.jpg) no-repeat center center/cover;
+  height: 1381px;
+  padding: 60px 20px 110px;
+
+  @include mixin.tab {
+    height: fit-content;
+  }
+
+  .sakura {
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    @include mixin.afterlineHeight(1);
+    text-align: center;
+    margin-top: 20px;
+
+    @include mixin.sp {
+      font-size: 28px;
+    }
+  }
+
+  &-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 66px;
+
+    @include mixin.tab {
+      display: block;
+    }
+
+    .access-photo {
+      margin-right: 83px;
+
+      @include mixin.tab {
+        width: 70%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include mixin.sp {
+        width: 100%;
+      }
+
+      img {
+        width: 656px;
+        height: 370px;
+        object-fit: cover;
+        vertical-align: bottom;
+
+        @include mixin.tab {
+          width: 100%;
+        }
+      }
+    }
+
+    .sentence {
+
+      @include mixin.tab {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+      }
+
+      @include mixin.sp {
+        width: 100%;
+      }
+
+      .address {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+      }
+
+      .address-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2;
+        @include mixin.afterlineHeight(2);
+        margin-top: 24px;
+      }
+
+      .tel {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        margin-top: 24px;
+      }
+
+      .tel-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        margin-top: 24px;
+      }
+
+      .business-hours {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        margin-top: 24px;
+      }
+
+      .business-hours-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        @include mixin.afterlineHeight(1);
+        margin-top: 24px;
+      }
+
+      .more-info {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 2;
+        @include mixin.afterlineHeight(2);
+        margin-top: 24px;
+
+        .pc-br {
+
+          @include mixin.tab {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .gmap-pc {
+    text-align: center;
+    margin-top: 69px;
+
+    @include mixin.tab {
+      display: none;
+    }
+  }
+
+  .gmap-tab {
+    display: none;
+
+    @include mixin.tab {
+      display: block;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 69px;
+    }
+
+    @include mixin.sp {
+      width: 100%;
+    }
+  }
+}

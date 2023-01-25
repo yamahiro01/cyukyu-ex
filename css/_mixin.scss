@@ -1,0 +1,47 @@
+$sp: 767px;  // スマホ
+$tab: 1199px;  // タブレット
+$s-pc: 1399px;  // PC通常
+$mv-w: 1699px;  // mvタイトル用
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin s-pc {
+  @media (max-width: ($s-pc)) {
+    @content;
+  }
+}
+
+@mixin mv-w {
+  @media (max-width: ($mv-w)) {
+    @content;
+  }
+}
+
+// line-heightの上下余白打消し
+@mixin afterlineHeight($line-height) {
+  &::before,
+  &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+  }
+
+  &::before {
+      margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+
+  &::after {
+      margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
