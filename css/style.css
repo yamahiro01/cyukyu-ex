@@ -286,7 +286,6 @@ a {
   text-align: center;
 }
 .footer-link {
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-align: start;
   margin-left: auto;
@@ -496,8 +495,7 @@ a {
   height: inherit;
   position: absolute;
   top: 0;
-  -webkit-animation: anime 15s 0s infinite;
-          animation: anime 15s 0s infinite;
+  animation: anime 15s 0s infinite;
   z-index: 0;
   opacity: 0;
 }
@@ -517,23 +515,6 @@ a {
   animation-delay: 10s;
   -webkit-animation-delay: 10s;
 }
-@-webkit-keyframes anime {
-  0% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-    transform: scale(1.2);
-    z-index: 10;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-}
 @keyframes anime {
   0% {
     opacity: 1;
@@ -552,7 +533,6 @@ a {
   }
 }
 .mv .main-ttl {
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   color: #FFFFFF;
   font-size: 34px;
@@ -587,7 +567,6 @@ a {
 }
 @media (max-width: 767px) {
   .introduction {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     padding: 60px 0;
@@ -597,7 +576,6 @@ a {
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright;
   display: inline-block;
@@ -767,7 +745,6 @@ a {
 }
 @media (max-width: 1199px) {
   .contents .oheya {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: block;
@@ -920,7 +897,6 @@ a {
 }
 @media (max-width: 1199px) {
   .contents .menu {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     flex-direction: column-reverse;
@@ -1064,7 +1040,6 @@ a {
 }
 @media (max-width: 1199px) {
   .contents .onsen {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: block;
@@ -1212,7 +1187,6 @@ a {
 }
 @media (max-width: 1199px) {
   .plan {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -1585,7 +1559,6 @@ a {
 }
 @media (max-width: 1199px) {
   .news {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -2994,16 +2967,7 @@ a {
 }
 .news .inner .tab-content__item.is-active {
   display: block;
-  -webkit-animation: fade 0.5s ease;
-          animation: fade 0.5s ease;
-}
-@-webkit-keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fade 0.5s ease;
 }
 @keyframes fade {
   from {
@@ -3024,7 +2988,6 @@ a {
 }
 @media (max-width: 1199px) {
   .access {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -3384,7 +3347,6 @@ a {
 }
 @media (max-width: 1199px) {
   .oheya-main .inner .oheya-contents .oheya__1 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -3553,7 +3515,6 @@ a {
 }
 @media (max-width: 1199px) {
   .oheya-main .inner .oheya-contents .oheya__2 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: flex;
@@ -3738,7 +3699,6 @@ a {
 }
 @media (max-width: 1199px) {
   .oheya-main .inner .oheya-contents .oheya__3 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -4035,7 +3995,6 @@ a {
 }
 @media (max-width: 1199px) {
   .menu-main .inner .menu-contents .menu__1 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -4183,7 +4142,6 @@ a {
 }
 @media (max-width: 1199px) {
   .menu-main .inner .menu-contents .menu__2 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: flex;
@@ -4339,7 +4297,6 @@ a {
 }
 @media (max-width: 1199px) {
   .menu-main .inner .menu-contents .menu__3 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -4602,7 +4559,6 @@ a {
 }
 @media (max-width: 1199px) {
   .onsen-main .inner .onsen-contents .onsen__1 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -4751,7 +4707,6 @@ a {
 }
 @media (max-width: 1199px) {
   .onsen-main .inner .onsen-contents .onsen__2 {
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     display: flex;
@@ -5247,6 +5202,5 @@ a {
 .flatpickr-calendar .numInput {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }/*# sourceMappingURL=style.css.map */
